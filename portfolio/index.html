@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <script>
+     //self discription
+       let  model={
+            self:[{
+                name:"Technical Skills",
+              list:[ " programming language:c,python,MYSQL,PHP,HTMLAllCollection",
+                "frameworks:bootstrap,laravel",
+                "libraries:jQuery",
+                "software:PHPstorm,pycharm,Vs code"]
+            
+            },
+             {
+                 name:"Projects",
+               list:[  "bounsn:learn programming languages",
+                " jntuacep:college website",
+                 "virtuallabs:online labs"]
+             },
+             {
+                 name:"Certificates",
+                 list:["udacity:front nano degree",
+                   "coursera:python for everybody",
+                    "coursera:data structures"]
+             },
+             {
+                 name:"Hobbies",
+               list:[ "reading books",
+                  "website designing",
+                   "listening music"]
+             }
+
+        ]
+        }
+
+       var dis=model['self'];
+
+
+
+
+      //HEADER SECTION
+       var header=document.createElement('header');
+       var img=document.createElement('img');
+       img.setAttribute("src","portfolio.jpg");
+       img.setAttribute("alt","logo image");
+       img.setAttribute("height","50px");
+       img.setAttribute("width","50px");
+       header.append(img);
+
+       var content=document.createTextNode('PORTFOLIO');
+       header.appendChild(content);
+       document.body.appendChild(header);
+
+       //DISPLAY PICTURE
+       var section=document.createElement("section");
+       var dp=document.createElement("div");
+       dp.classList.add("my-style");
+       var img1=document.createElement("img");
+       img1.setAttribute("src","home-right (2).jpg");
+       img1.setAttribute("alt","display picture");
+       img1.setAttribute("width","200px");
+       img1.setAttribute("height","200px");
+       dp.append(img1);
+
+       
+       var content1=document.createElement("h4");
+       content1.innerHTML="NAME:T UMA MAHESWAR" ;
+       var content2=document.createElement("h5");
+       content2.innerHTML="student & web developer";
+       dp.appendChild(content1);
+       dp.appendChild(content2);
+       section.appendChild(dp);
+       document.body.appendChild(section);
+         
+       //education details
+       var education=document.createElement("div");
+       education.classList.add("style");
+       var head=document.createElement("h3");
+       head.innerHTML="STUDY DETAILS";
+       education.append(head);
+       section.appendChild(education);
+
+
+       //table
+       let table = document.createElement('table');
+       let thead = document.createElement('thead');
+       let tbody = document.createElement('tbody');
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // Adding the entire table to the body tag
+        education.appendChild(table);
+
+
+        // Creating and adding data to first row of the table
+let row_1 = document.createElement('tr');
+let heading_1 = document.createElement('th');
+heading_1.innerHTML = "EDUCATION";
+let heading_2 = document.createElement('th');
+heading_2.innerHTML = "SCHOOL/COLLEGE";
+let heading_3 = document.createElement('th');
+heading_3.innerHTML = "MARKS";
+
+row_1.appendChild(heading_1);
+row_1.appendChild(heading_2);
+row_1.appendChild(heading_3);
+thead.appendChild(row_1);
+
+
+// Creating and adding data to second row of the table
+let row_2 = document.createElement('tr');
+let row_2_data_1 = document.createElement('td');
+row_2_data_1.innerHTML = "SSC";
+let row_2_data_2 = document.createElement('td');
+row_2_data_2.innerHTML = "VIJAYA BHARATHI";
+let row_2_data_3 = document.createElement('td');
+row_2_data_3.innerHTML = "9.8";
+
+row_2.appendChild(row_2_data_1);
+row_2.appendChild(row_2_data_2);
+row_2.appendChild(row_2_data_3);
+tbody.appendChild(row_2);
+
+
+// Creating and adding data to third row of the table
+let row_3 = document.createElement('tr');
+let row_3_data_1 = document.createElement('td');
+row_3_data_1.innerHTML = "INTERMEDIATE";
+let row_3_data_2 = document.createElement('td');
+row_3_data_2.innerHTML = "SIDDARTHA JUNIOR COLLEGE";
+let row_3_data_3 = document.createElement('td');
+row_3_data_3.innerHTML = "9.7";
+
+row_3.appendChild(row_3_data_1);
+row_3.appendChild(row_3_data_2);
+row_3.appendChild(row_3_data_3);
+tbody.appendChild(row_3);
+
+
+
+   //for of discription
+   for(var i=0;i<dis.length;i++){
+
+      var item=document.createElement("div");
+      item.classList.add("item");
+      section.append(item);
+
+      var title=document.createElement("p");
+      title.innerHTML=dis[i].name;
+      title.classList.add("title");
+      item.appendChild(title);
+       
+      var ul=document.createElement("ul");
+      item.appendChild(ul);
+      
+      dis[i].list.forEach(function(name){
+
+        var li=document.createElement("li");
+        ul.appendChild(li);
+        li.innerHTML=name;
+      })
+
+
+   }
+
+
+       
+       
+
+
+
+
+       
+        
+    </script>
+
+    
+</body>
+</html>
